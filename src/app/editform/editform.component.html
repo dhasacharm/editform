@@ -1,0 +1,15 @@
+<form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+    {{formValues[0]['empEmail']}}
+    <input type="email" formControlName="_id" [(ngModel)]="formValues[0]['_id']" />
+
+    <label>Email</label>
+    <input type="email" formControlName="empEmail" [(ngModel)]="formValues[0]['empEmail']" />
+    <label>name</label>
+    <input type="text" formControlName="empName"  [(ngModel)]="formValues[0]['empName']"/>
+    <label>mobile</label>
+    <input type="number" formControlName="empMobile"  [(ngModel)]="formValues[0]['empMobile']"/>
+
+    <label>password</label>
+    <input type="password" formControlName="password"  [(ngModel)]="formValues[0]['password']" />
+    <button type="submit">update</button>
+</form>

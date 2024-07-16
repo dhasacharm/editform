@@ -1,0 +1,22 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th>Email</th>
+        <th>Mobile</th>
+        <th>passowrd</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of tableData[0]">
+            <td>{{item.empEmail}}</td>
+            <td>{{item.empName}}</td>
+            <td>{{item.empMobile}}</td>
+            <td>{{item.password}}</td>
+            <td (click)="edit(item)"><i  class="fa fa-pencil-square-o" aria-hidden="true"></i>
+            </td>
+            <td (click)="delete(item)"><i class="fa fa-trash-o" aria-hidden="true"></i>
+            </td>
+
+        </tr>
+    </tbody>
+</table>
