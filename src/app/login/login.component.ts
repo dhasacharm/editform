@@ -5,6 +5,10 @@ import { LoginService } from '../login.service';
 import { Router } from '@angular/router';
 
 
+import { ToastrService } from 'ngx-toastr';
+
+
+
 @Component({
   selector: 'app-login',
   standalone: true,
@@ -14,7 +18,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent {
 
-  constructor(private loginservice: LoginService, private route: Router) { }
+  constructor(private loginservice: LoginService, private route: Router,private toastr: ToastrService) { }
 
   LoginForm: any
   errorMessage: any;
@@ -32,11 +36,17 @@ export class LoginComponent {
       this.route.navigateByUrl("/home")
     },
       (error) => {
-        console.log(error)
-        this.errorMessage = error
+        this.errorMessage = error.error.error
+        console.log(this.errorMessage)
+        this.toastr.error(this.errorMessage);
+
+
+
       }
     )
   }
 
 
 }
+
+
